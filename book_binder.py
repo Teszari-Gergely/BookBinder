@@ -23,9 +23,6 @@ def rename_jpg_files(folder_path):
     subfolders = sum(1 for _ in os.listdir(folder_path) if os.path.isdir(os.path.join(folder_path, _)))
     processed = 0
     for root, dirs, files in os.walk(folder_path):
-        if any(file.endswith('.html') for file in files):
-            # skip this directory if it contains an HTML file
-            continue
         for file in files:
             if file.endswith('.jpg'):
                 if '_' in file:
